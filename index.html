@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oscar Arroyo | Full Stack Web Developer</title>
+<meta name="description" content="Oscar Arroyo — Full Stack Web Developer. Desarrollo aplicaciones web modernas con Node.js, Express, MySQL, JavaScript y PHP. Frontend, backend, APIs REST y bases de datos.">
+<meta name="author" content="Oscar Arroyo">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oscar Arroyo | Full Stack Web Developer">
+<meta property="og:description" content="Desarrollo aplicaciones web modernas, escalables y funcionales, combinando frontend, backend y bases de datos.">
+<meta property="og:image" content="https://placehold.co/1200x630/0B0E14/5EEAD4?text=Oscar+Arroyo+%7C+Full+Stack+Developer">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230B0E14%27/%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 gradientUnits=%27userSpaceOnUse%27 x1=%270%27 y1=%270%27 x2=%27100%27 y2=%27100%27%3E%3Cstop offset=%270%27 stop-color=%27%235EEAD4%27/%3E%3Cstop offset=%270.65%27 stop-color=%27%235EEAD4%27/%3E%3Cstop offset=%271%27 stop-color=%27%238B93FF%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d=%27M40 34 L24 50 L40 66%27 stroke=%27url(%23g)%27 stroke-width=%279%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M46 72 L58 28%27 stroke=%27url(%23g)%27 stroke-width=%279%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3Cpath d=%27M60 34 L76 50 L60 66%27 stroke=%27url(%23g)%27 stroke-width=%279%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- SEO -->
+<link rel="canonical" href="https://oscararroyo.dev/">
+<meta property="og:url" content="https://oscararroyo.dev/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oscar Arroyo | Full Stack Web Developer">
+<meta name="twitter:description" content="Desarrollo aplicaciones web modernas, escalables y funcionales, combinando frontend, backend y bases de datos.">
+<meta name="twitter:image" content="https://placehold.co/1200x630/0B0E14/5EEAD4?text=Oscar+Arroyo+%7C+Full+Stack+Developer">
+
+<script>
+function handleIconError(img){
+  img.onerror = null;
+  img.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B96AA' stroke-width='1.8'%3E%3Cpath d='M16 18l6-6-6-6M8 6l-6 6 6 6'/%3E%3C/svg%3E";
+}
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="wrap nav-inner">
+    <a href="#home" class="logo">
+      <svg class="logo-icon" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" rx="22" fill="#0B0E14"/>
+        <defs>
+          <linearGradient id="logo-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100">
+            <stop offset="0" stop-color="#5EEAD4"/>
+            <stop offset="0.65" stop-color="#5EEAD4"/>
+            <stop offset="1" stop-color="#8B93FF"/>
+          </linearGradient>
+        </defs>
+        <path d="M40 34 L24 50 L40 66" stroke="url(#logo-grad)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M46 72 L58 28" stroke="url(#logo-grad)" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M60 34 L76 50 L60 66" stroke="url(#logo-grad)" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      oscar<span class="dot">.dev</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#stack">Skills</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#certifications">Certificados</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://github.com/oscararroyo7" class="icon-btn" aria-label="GitHub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.02 3.26 9.27 7.78 10.77.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.36-3.83-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.03-.71.08-.7.08-.7 1.14.08 1.74 1.18 1.74 1.18 1.01 1.74 2.65 1.24 3.3.95.1-.74.4-1.24.72-1.53-2.52-.29-5.17-1.27-5.17-5.65 0-1.25.44-2.27 1.17-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.8 10.8 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.73.8 1.17 1.82 1.17 3.07 0 4.39-2.65 5.36-5.18 5.64.41.36.77 1.05.77 2.12v3.14c0 .3.21.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.74 18.27.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/oscar-arroyo-dev/" class="icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V23h-4V8Zm7.5 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8Z"/></svg>
+      </a>
+      <a href="Oscar_Arroyo_CV.pdf" class="btn btn-primary btn-sm" download>
+        Descargar CV
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="scrim" id="scrim"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" style="--i:0">Inicio</a>
+  <a href="#about" style="--i:1">Sobre mí</a>
+  <a href="#stack" style="--i:2">Skills</a>
+  <a href="#projects" style="--i:3">Proyectos</a>
+  <a href="#experience" style="--i:4">Experiencia</a>
+  <a href="#certifications" style="--i:5">Certificados</a>
+  <a href="#contact" style="--i:6">Contacto</a>
+  <div class="mm-actions">
+    <a href="Oscar_Arroyo_CV.pdf" class="btn btn-primary" download style="--i:7">Descargar CV</a>
+    <a href="https://github.com/oscararroyo7" class="btn btn-ghost" target="_blank" rel="noopener" style="--i:8">Ver GitHub</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-hi hero-enter" id="heroEl0"><span class="pulse"></span> Disponible para nuevas oportunidades</div>
+      <h1 class="hero-enter" id="heroEl1">Hola, soy Oscar Arroyo<br><span class="accent-text">Full Stack Web Developer</span></h1>
+      <p class="hero-sub hero-enter" id="heroEl2">Desarrollo aplicaciones web modernas, escalables y funcionales, combinando frontend, backend y bases de datos — desde catálogos e-commerce hasta paneles administrativos completos.</p>
+      <div class="hero-tags hero-enter" id="heroEl3">Frontend<span class="sep">·</span>Backend<span class="sep">·</span>APIs REST<span class="sep">·</span>Bases de datos<span class="sep">·</span>Sistemas administrativos<span class="sep">·</span>E-commerce</div>
+      <div class="hero-cta hero-enter" id="heroEl4">
+        <a href="#projects" class="btn btn-primary">Ver mis proyectos</a>
+        <a href="Oscar_Arroyo_CV.pdf" class="btn btn-ghost" download>Descargar CV</a>
+      </div>
+      <div class="hero-social hero-enter" id="heroEl5">
+        <a href="https://github.com/oscararroyo7" class="icon-btn" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.02 3.26 9.27 7.78 10.77.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.36-3.83-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.03-.71.08-.7.08-.7 1.14.08 1.74 1.18 1.74 1.18 1.01 1.74 2.65 1.24 3.3.95.1-.74.4-1.24.72-1.53-2.52-.29-5.17-1.27-5.17-5.65 0-1.25.44-2.27 1.17-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.8 10.8 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.73.8 1.17 1.82 1.17 3.07 0 4.39-2.65 5.36-5.18 5.64.41.36.77 1.05.77 2.12v3.14c0 .3.21.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.74 18.27.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/oscar-arroyo-dev/" class="icon-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V23h-4V8Zm7.5 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8Z"/></svg>
+        </a>
+        <a href="mailto:oscararroyo07@gmail.com" class="icon-btn" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="m3 6 9 7 9-7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="terminal-wrap hero-enter" id="heroEl6">
+    <div class="terminal">
+      <div class="term-bar">
+        <span class="term-lang">JS</span>
+        <span class="term-title">developer.js</span>
+        <span class="term-live"><span class="pulse"></span>live</span>
+      </div>
+      <div class="term-body" id="termBody"></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-bar reveal">
+  <div class="wrap stats-line">
+    <b>2</b> proyectos completos<span class="sep">·</span>Node.js, React, MySQL<span class="sep">·</span>frontend y backend integrados de punta a punta
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Sobre mí</div>
+      <h2 class="section-title">Full Stack, de punta a punta</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Soy desarrollador Full Stack con formación práctica tanto en frontend como en backend. Disfruto tomar una idea y llevarla de punta a punta: diseñar la interfaz, construir la lógica del servidor, modelar la base de datos y conectar todo en un producto que funciona de verdad.</p>
+        <p>Trabajo principalmente con JavaScript (Node.js, Express), PHP y MySQL, y me enfoco en escribir código claro, organizado y fácil de mantener. Me interesan especialmente los sistemas administrativos, los paneles con roles y permisos, y los flujos de autenticación bien resueltos.</p>
+        <p>Soy una persona metódica a la hora de resolver problemas: primero entiendo el requerimiento, después diseño la estructura de datos, y recién ahí escribo código. Sigo aprendiendo de forma constante — nuevas herramientas, buenas prácticas y patrones que mejoren la calidad de lo que construyo.</p>
+        <ul class="about-list">
+          <li>Desarrollo de aplicaciones completas</li>
+          <li>Diseño de interfaces responsive</li>
+          <li>Construcción de APIs REST</li>
+          <li>Gestión y diseño de bases de datos</li>
+          <li>Sistemas CRUD</li>
+          <li>Autenticación y autorización (JWT)</li>
+          <li>Paneles administrativos</li>
+          <li>Integración frontend – backend – DB</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="avail-card">
+          <div class="status"><span class="pulse"></span> DISPONIBLE PARA TRABAJAR</div>
+          <h3>Buscando oportunidades como:</h3>
+          <div class="avail-roles">
+            <span>Frontend Developer</span>
+            <span>Backend Developer</span>
+            <span>Full Stack Developer</span>
+          </div>
+          <p>Abierto a posiciones Junior / Semi-Senior, freelance o primeras oportunidades formales en desarrollo web.</p>
+          <a href="#contact" class="btn btn-primary" style="width:100%;">Hablemos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section class="stack" id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Mi stack</div>
+      <h2 class="section-title">Tecnologías que uso día a día</h2>
+      <p class="section-sub">Organizadas por área. Sin porcentajes inflados — solo las herramientas con las que realmente construyo.</p>
+    </div>
+
+    <div class="tabs reveal" id="tabs">
+      <button class="tab-btn active" data-tab="frontend">Frontend</button>
+      <button class="tab-btn" data-tab="backend">Backend</button>
+      <button class="tab-btn" data-tab="database">Database</button>
+      <button class="tab-btn" data-tab="tools">Tools</button>
+    </div>
+
+    <div class="tech-panel active reveal-stagger reveal" data-panel="frontend">
+      <div class="tech-card" style="--i:0"><div class="tech-badge tech-badge-logo"><img src="img/tech/html5.png" alt="HTML5" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">HTML5</div><div class="tech-desc">Estructura semántica y accesible.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:1"><div class="tech-badge tech-badge-logo"><img src="img/tech/css3.png" alt="CSS3" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">CSS3</div><div class="tech-desc">Layouts responsive con Flexbox y Grid.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:2"><div class="tech-badge tech-badge-logo"><img src="img/tech/javascript.png" alt="JavaScript" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">JavaScript</div><div class="tech-desc">DOM, eventos, fetch y lógica de UI.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:3"><div class="tech-badge tech-badge-logo"><img src="img/tech/bootstrap.png" alt="Bootstrap" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Bootstrap</div><div class="tech-desc">Prototipado rápido y grillas responsive.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:4"><div class="tech-badge tech-badge-logo"><img src="img/tech/responsive-design.png" alt="Responsive Design" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Responsive Design</div><div class="tech-desc">Interfaces adaptadas a cualquier pantalla.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:5"><div class="tech-badge tech-badge-logo"><img src="img/tech/ejs.png" alt="EJS" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">EJS</div><div class="tech-desc">Vistas dinámicas renderizadas en servidor.</div><span class="tech-level lvl-intermediate">Intermediate</span></div>
+    </div>
+
+    <div class="tech-panel" data-panel="backend">
+      <div class="tech-card" style="--i:0"><div class="tech-badge tech-badge-logo"><img src="img/tech/nodejs.png" alt="Node.js" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Node.js</div><div class="tech-desc">Entorno de ejecución del backend.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:1"><div class="tech-badge tech-badge-logo"><img src="img/tech/express.png" alt="Express.js" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Express.js</div><div class="tech-desc">Rutas, middlewares y controladores.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:2"><div class="tech-badge tech-badge-logo"><img src="img/tech/php.png" alt="PHP" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">PHP</div><div class="tech-desc">Lógica de servidor y páginas dinámicas.</div><span class="tech-level lvl-intermediate">Intermediate</span></div>
+      <div class="tech-card" style="--i:3"><div class="tech-badge tech-badge-logo"><img src="img/tech/rest-api.png" alt="APIs REST" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">APIs REST</div><div class="tech-desc">Diseño de endpoints y recursos.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:4"><div class="tech-badge tech-badge-logo"><img src="img/tech/autenticacion.png" alt="Autenticación" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Autenticación</div><div class="tech-desc">Registro, login y control de acceso.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:5"><div class="tech-badge tech-badge-logo"><img src="img/tech/jwt.png" alt="JWT" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">JWT</div><div class="tech-desc">Tokens para sesiones y autorización.</div><span class="tech-level lvl-intermediate">Intermediate</span></div>
+      <div class="tech-card" style="--i:6"><div class="tech-badge tech-badge-icon" style="background:rgba(139,147,255,0.12);color:var(--accent-3);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><div class="tech-name">Sesiones</div><div class="tech-desc">Gestión de estado del usuario.</div><span class="tech-level lvl-intermediate">Intermediate</span></div>
+    </div>
+
+    <div class="tech-panel" data-panel="database">
+      <div class="tech-card" style="--i:0"><div class="tech-badge tech-badge-logo"><img src="img/tech/mysql.png" alt="MySQL" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">MySQL</div><div class="tech-desc">Motor de base de datos relacional.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:1"><div class="tech-badge tech-badge-logo"><img src="img/tech/sequelize.png" alt="Sequelize" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Sequelize</div><div class="tech-desc">ORM para modelar datos en Node.js.</div><span class="tech-level lvl-intermediate">Intermediate</span></div>
+      <div class="tech-card" style="--i:2"><div class="tech-badge tech-badge-logo"><img src="img/tech/sql.png" alt="SQL" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">SQL</div><div class="tech-desc">Consultas, joins y optimización básica.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:3"><div class="tech-badge tech-badge-logo"><img src="img/tech/diseno-bd.png" alt="Diseño de BD" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Diseño de BD</div><div class="tech-desc">Modelado entidad-relación.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:4"><div class="tech-badge tech-badge-icon" style="background:rgba(240,124,73,0.12);color:#F0844D;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 15l6-6"/><path d="M10 6l1.5-1.5a3.5 3.5 0 0 1 5 5L15 11"/><path d="M14 18l-1.5 1.5a3.5 3.5 0 0 1-5-5L9 13"/></svg></div><div class="tech-name">Relaciones</div><div class="tech-desc">1:1, 1:N y N:M entre tablas.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:5"><div class="tech-badge tech-badge-icon" style="background:rgba(94,234,212,0.12);color:var(--accent);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></div><div class="tech-name">CRUD</div><div class="tech-desc">Operaciones completas sobre datos.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+    </div>
+
+    <div class="tech-panel" data-panel="tools">
+      <div class="tech-card" style="--i:0"><div class="tech-badge tech-badge-logo"><img src="https://cdn.simpleicons.org/git" alt="Git" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Git</div><div class="tech-desc">Control de versiones diario.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:1"><div class="tech-badge tech-badge-logo"><img src="https://cdn.simpleicons.org/github" alt="GitHub" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">GitHub</div><div class="tech-desc">Repositorios y control de proyectos.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:2"><div class="tech-badge tech-badge-logo"><img src="img/tech/vscode.png" alt="VS Code" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">VS Code</div><div class="tech-desc">Editor principal de trabajo.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:3"><div class="tech-badge tech-badge-logo"><img src="img/tech/npm.png" alt="npm" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">npm</div><div class="tech-desc">Gestión de dependencias.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+      <div class="tech-card" style="--i:4"><div class="tech-badge tech-badge-logo"><img src="img/tech/xampp.png" alt="XAMPP" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">XAMPP</div><div class="tech-desc">Entorno local para PHP y MySQL.</div><span class="tech-level lvl-comfortable">Comfortable</span></div>
+      <div class="tech-card" style="--i:5"><div class="tech-badge tech-badge-logo"><img src="img/tech/postman.png" alt="Postman" loading="lazy" onerror="handleIconError(this)"></div><div class="tech-name">Postman</div><div class="tech-desc">Prueba y documentación de APIs.</div><span class="tech-level lvl-advanced">Advanced</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="projects-head reveal">
+      <div>
+        <h2 class="section-title">Proyectos destacados</h2>
+        <p class="section-sub">Aplicaciones completas, de punta a punta: interfaz, servidor y base de datos.</p>
+      </div>
+      <div class="projects-count">02</div>
+    </div>
+
+    <!-- Project 1 -->
+    <div class="project-card reveal">
+      <div class="project-visual">
+        <span class="mock-tag">Proyecto institucional · Mapa interactivo</span>
+        <div class="mock-gallery">
+          <div class="mg-track">
+            <img src="img/projects/visor-home.jpg" alt="Home del Visor Provincial de Prevención de Incendios Forestales" loading="lazy" class="mg-slide active">
+            <img src="img/projects/visor-incendios.jpg" alt="Mapa del Visor: capas de riesgo, histórico NASA FIRMS y focos activos" loading="lazy" class="mg-slide">
+            <img src="img/projects/visor-manual.jpg" alt="Manual de prevención navegable del Visor, con material descargable por nivel educativo" loading="lazy" class="mg-slide">
+          </div>
+          <button type="button" class="mg-nav mg-prev" aria-label="Imagen anterior">‹</button>
+          <button type="button" class="mg-nav mg-next" aria-label="Imagen siguiente">›</button>
+          <div class="mg-dots">
+            <button type="button" class="mg-dot active" aria-label="Ver imagen 1: Home"></button>
+            <button type="button" class="mg-dot" aria-label="Ver imagen 2: Mapa"></button>
+            <button type="button" class="mg-dot" aria-label="Ver imagen 3: Manual"></button>
+          </div>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-num">01 / Proyecto institucional — La Rioja</span>
+        <h3>Visor Provincial de Prevención de Incendios Forestales</h3>
+        <p class="p-desc">Herramienta ciudadana desarrollada para la Secretaría de Ambiente de La Rioja: cualquier persona toca un punto del mapa y sabe, en el momento, qué tan riesgosa es esa zona y qué hacer al respecto. No es un panel técnico de monitoreo — es una herramienta de prevención pensada para cualquier vecino.</p>
+        <div class="case-flow">
+          <b>Problema:</b> la prevención depende de que la gente entienda el riesgo, no solo reciba alertas técnicas <span class="arrow">→</span>
+          <b>Solución:</b> mapa con datos reales + riesgo calculado al instante + contenido educativo separado del código <span class="arrow">→</span>
+          <b>Resultado:</b> una sola herramienta para consultar, entender y aprender a prevenir
+        </div>
+        <ul class="feature-list">
+          <li>Riesgo de incendio en tiempo real al hacer clic en cualquier punto del mapa (clima vía Open-Meteo + fórmula simplificada tipo Fire Weather Index)</li>
+          <li>Capa de focos activos con datos satelitales reales de NASA FIRMS, servidos desde un backend propio — la clave de API nunca llega al navegador</li>
+          <li>Histórico de incendios 2020–2026 agrupado en el mapa con clustering</li>
+          <li>Manual educativo descargable por nivel y protocolos de emergencia, editables sin tocar el código</li>
+        </ul>
+        <div class="tech-pills"><span class="stack-label">Stack:</span> HTML5 · CSS3 · JavaScript · Node.js · Leaflet.js · NASA FIRMS API · Open-Meteo API</div>
+        <div class="project-actions">
+          <a href="https://visor-incendios-la-rioja.vercel.app/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Ver proyecto</a>
+          <a href="https://github.com/oscararroyo7/visor-incendios-la-rioja" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card reveal">
+      <div class="project-visual">
+        <span class="mock-tag">Plataforma completa · E-commerce + Panel admin</span>
+        <div class="mock-gallery">
+          <div class="mg-track">
+            <img src="img/projects/distribuidora-home.jpg" alt="Catálogo público de la distribuidora" loading="lazy" class="mg-slide active">
+            <img src="img/projects/distribuidora-dashboard.jpg" alt="Dashboard administrativo: ventas, pedidos, clientes y stock" loading="lazy" class="mg-slide">
+            <img src="img/projects/distribuidora-login.jpg" alt="Login con email/contraseña o Google OAuth" loading="lazy" class="mg-slide">
+            <img src="img/projects/distribuidora-cms.jpg" alt="Gestión de contenido del home: banners, destacados y footer sin tocar código" loading="lazy" class="mg-slide">
+          </div>
+          <button type="button" class="mg-nav mg-prev" aria-label="Imagen anterior">‹</button>
+          <button type="button" class="mg-nav mg-next" aria-label="Imagen siguiente">›</button>
+          <div class="mg-dots">
+            <button type="button" class="mg-dot active" aria-label="Ver imagen 1: Catálogo"></button>
+            <button type="button" class="mg-dot" aria-label="Ver imagen 2: Dashboard"></button>
+            <button type="button" class="mg-dot" aria-label="Ver imagen 3: Login"></button>
+            <button type="button" class="mg-dot" aria-label="Ver imagen 4: Gestión del home"></button>
+          </div>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-num">02 / Plataforma E-commerce + Panel Admin</span>
+        <h3>Sistema Web para Distribuidora</h3>
+        <p class="p-desc">Plataforma completa para que una distribuidora venda y se gestione sin depender de terceros: catálogo público, panel administrativo con roles y permisos, dashboard con métricas en tiempo real y gestión de contenido del home sin tocar código.</p>
+        <div class="case-flow">
+          <b>Problema:</b> catálogo, pedidos y contenido del sitio gestionados a mano, sin panel propio <span class="arrow">→</span>
+          <b>Solución:</b> un solo sistema con roles, dashboard y CMS interno <span class="arrow">→</span>
+          <b>Resultado:</b> ventas, stock y contenido del sitio administrados desde un solo lugar
+        </div>
+        <ul class="feature-list">
+          <li>Catálogo público con carrito de compras, construido como isla React sobre el resto del sitio en EJS</li>
+          <li>Login con email/contraseña o Google OAuth, con roles y permisos por tipo de usuario</li>
+          <li>Dashboard con estadísticas de ventas, pedidos, clientes y stock crítico en tiempo real</li>
+          <li>Gestión de productos, categorías, marcas, clientes y pedidos con operaciones CRUD completas</li>
+          <li>Gestión de contenido del home (banners, destacados, footer) con flujo de borrador/publicado, sin tocar código</li>
+          <li>Facturas generadas en PDF del lado del servidor</li>
+        </ul>
+        <div class="tech-pills"><span class="stack-label">Stack:</span> Node.js · Express · MySQL · Sequelize · React · EJS · JWT · Google OAuth · Bootstrap</div>
+        <div class="project-actions">
+          <a href="#" class="btn btn-primary btn-sm">Ver proyecto</a>
+          <a href="https://github.com/oscararroyo7/Distribuidora" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES ============ -->
+<section class="capabilities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Servicios</div>
+      <h2 class="section-title">¿Qué puedo desarrollar?</h2>
+    </div>
+    <div class="cap-grid reveal-stagger reveal">
+      <div class="cap-card" style="--i:0"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div><h4>Landing pages</h4><p>Páginas de una sección, rápidas y orientadas a conversión.</p></div>
+      <div class="cap-card" style="--i:1"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h4>Sitios corporativos</h4><p>Presencia web profesional para empresas y marcas.</p></div>
+      <div class="cap-card" style="--i:2"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h4>E-commerce</h4><p>Tiendas online completas con carrito y pagos.</p></div>
+      <div class="cap-card" style="--i:3"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h4>Catálogos online</h4><p>Vitrinas de productos con filtros y búsqueda.</p></div>
+      <div class="cap-card" style="--i:4"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><h4>Sistemas administrativos</h4><p>Herramientas internas para gestionar operaciones.</p></div>
+      <div class="cap-card" style="--i:5"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></div><h4>Dashboards</h4><p>Paneles con métricas y visualización de datos.</p></div>
+      <div class="cap-card" style="--i:6"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div><h4>APIs REST</h4><p>Endpoints documentados, listos para consumir.</p></div>
+      <div class="cap-card" style="--i:7"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></div><h4>Sistemas CRUD</h4><p>Altas, bajas y modificaciones sobre cualquier entidad.</p></div>
+      <div class="cap-card" style="--i:8"><div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/></svg></div><h4>Bases de datos</h4><p>Modelado relacional pensado para escalar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="experience" id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Trayectoria</div>
+      <h2 class="section-title">Experiencia en proyectos</h2>
+      <p class="section-sub">Formación, cursos y proyectos reales que fui desarrollando en el camino.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2025 — Presente</div>
+        <h4>Desarrollo de sistema E-commerce para distribuidora</h4>
+        <p>Proyecto integral con catálogo, carrito, panel administrativo y gestión de pedidos, aplicando arquitectura MVC con Node.js, Express y MySQL.</p>
+        <div class="tl-tags"><span>Node.js</span><span>Express</span><span>MySQL</span><span>Sequelize</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2024 — 2025</div>
+        <h4>Backend y APIs REST</h4>
+        <p>Práctica intensiva construyendo APIs con autenticación JWT, validaciones y documentación con Postman.</p>
+        <div class="tl-tags"><span>Express</span><span>JWT</span><span>Postman</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2024</div>
+        <h4>Formación en desarrollo Full Stack</h4>
+        <p>Curso enfocado en HTML, CSS, JavaScript, PHP, MySQL y fundamentos de bases de datos relacionales.</p>
+        <div class="tl-tags"><span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2023</div>
+        <h4>Primeros pasos en programación</h4>
+        <p>Inicio autodidacta con lógica de programación, HTML/CSS y JavaScript básico.</p>
+        <div class="tl-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section class="certifications" id="certifications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Formación</div>
+      <h2 class="section-title">Certificaciones</h2>
+      <p class="section-sub">Cursos completados y verificables.</p>
+    </div>
+    <div class="cert-grid reveal-stagger reveal">
+      <a class="cert-card" style="--i:0" href="img/certificates/coderhouse-desarrollo-web.jpg" target="_blank" rel="noopener">
+        <div class="cert-thumb">
+          <img src="img/certificates/coderhouse-desarrollo-web.jpg" alt="Certificado de Desarrollo Web — Coderhouse" loading="lazy">
+        </div>
+        <div class="cert-info">
+          <h4>Desarrollo Web</h4>
+          <p>Coderhouse · 45 hs · Octubre 2023</p>
+        </div>
+        <span class="cert-view">Ver certificado ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GITHUB ============ -->
+<section class="github-section">
+  <div class="wrap">
+    <div class="gh-card reveal">
+      <div class="gh-left">
+        <div class="eyebrow">Open source</div>
+        <h3>Mi código está en GitHub</h3>
+        <p>Cada proyecto que desarrollo queda documentado y versionado. El código está disponible para revisión: estructura, commits y decisiones técnicas.</p>
+        <div class="gh-points">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Repositorios con proyectos completos</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Commits organizados y descriptivos</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> README con documentación clara</div>
+        </div>
+        <a href="https://github.com/oscararroyo7" class="btn btn-primary" target="_blank" rel="noopener">Ver GitHub</a>
+      </div>
+      <div class="gh-right">
+        <a class="gh-repo" href="https://github.com/oscararroyo7/Distribuidora" target="_blank" rel="noopener">
+          <span class="gh-repo-name">Distribuidora</span>
+          <span class="gh-repo-lang"><span class="dotc" style="background:var(--accent-2);"></span>JavaScript</span>
+        </a>
+        <a class="gh-repo" href="https://github.com/oscararroyo7/visor-incendios-la-rioja" target="_blank" rel="noopener">
+          <span class="gh-repo-name">visor-incendios-la-rioja</span>
+          <span class="gh-repo-lang"><span class="dotc" style="background:var(--accent);"></span>JavaScript</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contacto</div>
+      <h2 class="section-title">¿Trabajamos juntos?</h2>
+      <p class="section-sub">Estoy abierto a nuevas oportunidades, proyectos y desafíos profesionales.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required aria-describedby="err-name">
+            <span class="field-error" id="err-name" role="alert">Contame tu nombre para saber a quién responderle.</span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required aria-describedby="err-email">
+            <span class="field-error" id="err-email" role="alert">Ingresá un email válido para poder responderte.</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Asunto</label>
+          <input type="text" id="subject" name="subject" placeholder="¿En qué puedo ayudarte?" required aria-describedby="err-subject">
+          <span class="field-error" id="err-subject" role="alert">Contame brevemente el motivo del mensaje.</span>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" placeholder="Contame sobre el proyecto o la oportunidad..." required aria-describedby="err-message"></textarea>
+          <span class="field-error" id="err-message" role="alert">El mensaje no puede quedar vacío.</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <div class="form-success" id="formSuccess">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          ¡Mensaje enviado! Se abrió tu cliente de correo para que lo confirmes.
+        </div>
+        <p class="form-note">Al enviar se abre tu cliente de correo con el mensaje ya redactado. Para recibir los mensajes directo en un panel, conectalo a un servicio como Formspree o a tu propio backend.</p>
+      </form>
+      <div class="contact-side reveal">
+        <div class="side-card">
+          <div class="status"><span class="pulse"></span> DISPONIBLE PARA OPORTUNIDADES</div>
+          <p>Habitualmente respondo dentro de 24-48 horas.</p>
+        </div>
+        <div class="side-card">
+          <a href="tel:+5493825579642" class="contact-link">
+            <span class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+            <span class="cl-text"><span class="cl-label">TELÉFONO</span>+54 9 3825 57-9642</span>
+          </a>
+          <a href="mailto:oscararroyo07@gmail.com" class="contact-link">
+            <span class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="m3 6 9 7 9-7"/></svg></span>
+            <span class="cl-text"><span class="cl-label">EMAIL</span>oscararroyo07@gmail.com</span>
+          </a>
+          <a href="https://github.com/oscararroyo7" target="_blank" rel="noopener" class="contact-link">
+            <span class="cl-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.03c0 5.02 3.26 9.27 7.78 10.77.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.36-3.83-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.03-.71.08-.7.08-.7 1.14.08 1.74 1.18 1.74 1.18 1.01 1.74 2.65 1.24 3.3.95.1-.74.4-1.24.72-1.53-2.52-.29-5.17-1.27-5.17-5.65 0-1.25.44-2.27 1.17-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.8 10.8 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.73.8 1.17 1.82 1.17 3.07 0 4.39-2.65 5.36-5.18 5.64.41.36.77 1.05.77 2.12v3.14c0 .3.21.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.74 18.27.5 12 .5Z"/></svg></span>
+            <span class="cl-text"><span class="cl-label">GITHUB</span>github.com/oscararroyo7</span>
+          </a>
+          <a href="https://www.linkedin.com/in/oscar-arroyo-dev/" target="_blank" rel="noopener" class="contact-link">
+            <span class="cl-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8h4V23h-4V8Zm7.5 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8Z"/></svg></span>
+            <span class="cl-text"><span class="cl-label">LINKEDIN</span>linkedin.com/in/oscar-arroyo-dev</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap footer-inner">
+    <p>© 2026 Oscar Arroyo. Todos los derechos reservados.</p>
+    <div class="footer-links">
+      <a href="https://github.com/oscararroyo7" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/oscar-arroyo-dev/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:oscararroyo07@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
