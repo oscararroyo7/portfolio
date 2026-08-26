@@ -210,6 +210,7 @@ contactForm.querySelectorAll('input, textarea').forEach(field => {
 });
 
 const CONTACT_EMAIL = 'oscararroyo07@gmail.com';
+const FORM_ENDPOINT = 'https://formspree.io/f/moeqavgz';
 
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -220,21 +221,28 @@ contactForm.addEventListener('submit', (e) => {
     return;
   }
   const data = new FormData(contactForm);
-  const subject = encodeURIComponent(`[Portfolio] ${data.get('subject')}`);
-  const body = encodeURIComponent(
-    `Nombre: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`
-  );
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Enviando...';
-  setTimeout(() => {
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    submitBtn.disabled = false;
-    submitBtn.textContent = submitLabel;
-    formSuccess.classList.add('show');
-    contactForm.reset();
-    contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
-    fields.forEach(f => f.removeAttribute('aria-invalid'));
-    setTimeout(() => formSuccess.classList.remove('show'), 5000);
-  }, 400);
+
+  fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+    .then(response => {
+      if(!response.ok) throw new Error('Formspree respondió con error');
+      formSuccess.classList.add('show');
+      contactForm.reset();
+      contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+      fields.forEach(f => f.removeAttribute('aria-invalid'));
+      setTimeout(() => formSuccess.classList.remove('show'), 5000);
+    })
+    .catch(() => {
+      alert(`No se pudo enviar el mensaje. Escribime directo a ${CONTACT_EMAIL}.`);
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitLabel;
+    });
 });
