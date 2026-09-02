@@ -290,8 +290,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ============ HERO ============ */
 .hero{
-  padding:180px 0 90px;
-  min-height:100vh;
+  /* Deja espacio para la navegación fija sin desplazar el contenido principal. */
+  padding:128px 0 72px;
+  min-height:calc(100vh - 1px);
   display:flex;
   align-items:center;
 }
@@ -317,6 +318,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-enter.hero-in{opacity:1;transform:translateY(0);}
 .terminal-wrap.hero-enter{transform:translateY(0) translateX(24px);}
 .terminal-wrap.hero-enter.hero-in{transform:translateY(0) translateX(0);}
+/* Compensa el centrado vertical del hero para que la terminal quede completa al cargar. */
+@media (min-width:1025px){
+  .terminal-wrap{margin-top:-150px;}
+}
 .hero-hi .pulse{
   width:6px;height:6px;border-radius:50%;
   background:var(--accent);
@@ -981,8 +986,18 @@ footer{
 .footer-links a:hover{color:var(--accent);}
 
 /* ============ RESPONSIVE ============ */
+/* Evita que los enlaces se corten en anchos de escritorio intermedios. */
+@media (max-width:1200px){
+  .nav-links, .nav-actions .icon-btn{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu, .scrim{display:flex;}
+}
 @media (max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;gap:50px;}
+  .hero{
+    padding:112px 0 64px;
+    align-items:flex-start;
+  }
+  .hero-grid{grid-template-columns:1fr;gap:36px;}
   .terminal-wrap{order:-1;max-width:520px;margin:0 auto;}
   .terminal{transform:none;}
   .about-grid{grid-template-columns:1fr;}
@@ -1001,7 +1016,7 @@ footer{
   .nav-actions .icon-btn{display:none;}
   .hamburger{display:flex;}
   .mobile-menu, .scrim{display:flex;}
-  .hero{padding:150px 0 70px;}
+  .hero{padding:104px 0 56px;}
   .stats-line{font-size:12px;line-height:2.1;}
   .about-list{grid-template-columns:1fr;}
   .tech-grid, .tech-panel.active{grid-template-columns:1fr 1fr;}
