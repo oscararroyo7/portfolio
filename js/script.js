@@ -38,6 +38,12 @@ hamburger.addEventListener('click', () => {
 scrim.addEventListener('click', () => closeMenu());
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => closeMenu(false)));
 
+// Si se cambia de orientación o se vuelve a escritorio, no dejar el menú
+// abierto ni el scroll de la página bloqueado.
+window.addEventListener('resize', () => {
+  if(window.innerWidth > 1200 && mobileMenu.classList.contains('open')) closeMenu(false);
+}, {passive:true});
+
 document.addEventListener('keydown', (e) => {
   if(!mobileMenu.classList.contains('open')) return;
   if(e.key === 'Escape'){
