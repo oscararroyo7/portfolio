@@ -549,7 +549,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .tech-grid{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(6,1fr);
   gap:16px;
 }
 .tech-category-title{
@@ -564,7 +564,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .tech-panel,
 .tech-panel.active{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(6,1fr);
   gap:16px;
   margin-bottom:16px;
 }
