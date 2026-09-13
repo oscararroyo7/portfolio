@@ -577,8 +577,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   display:flex;
   flex-direction:column;
   justify-content:center;
-  min-height:156px;
-  padding:14px 12px 12px;
+  min-height:132px;
+  padding:10px 10px 9px;
   text-align:center;
   transition:transform .2s var(--ease-out), border-color .2s ease, background .2s ease, box-shadow .2s ease;
 }
@@ -591,7 +591,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 }
 .tech-badge{
-  width:48px;height:48px;
+  width:42px;height:42px;
   border-radius:0;
   display:flex;align-items:center;justify-content:center;
   font-family:var(--font-mono);
