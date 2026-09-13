@@ -603,7 +603,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .tech-badge.tech-badge-logo{background:transparent;padding:0;}
 .tech-badge.tech-badge-logo img{width:100%;height:100%;object-fit:contain;display:block;}
 .tech-badge.tech-badge-logo .tech-logo-white{filter:brightness(0) invert(1);}
-.tech-badge.tech-badge-logo .tech-logo-node{transform:scale(1.45);}
+.tech-badge.tech-badge-logo .tech-logo-node{transform:scale(1.7);}
+.tech-badge.tech-badge-logo .tech-logo-sql{transform:scale(1.65);}
 .tech-badge.tech-badge-logo .tech-logo-mysql{transform:scale(1.55);}
 .tech-badge.tech-badge-icon svg{width:32px;height:32px;}
 .tech-name{color:#cbd2dc;font-size:16px;font-weight:600;line-height:1.25;margin:0;}
