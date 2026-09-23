@@ -66,6 +66,30 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ============ TABS ============ */
+document.querySelectorAll('.tech-panel').forEach(panel => {
+  const cards = Array.from(panel.children);
+  const row = document.createElement('div');
+  const track = document.createElement('div');
+  row.className = 'tech-slider-row';
+  track.className = 'tech-slider-track tech-slider-track-forward';
+  row.appendChild(track);
+  panel.appendChild(row);
+
+  panel.classList.add('tech-slider');
+  cards.forEach(card => track.appendChild(card));
+  Array.from(track.children).forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  requestAnimationFrame(() => {
+    const pixelsPerSecond = 46;
+    const duration = (track.scrollWidth / 2) / pixelsPerSecond;
+    track.style.setProperty('--slide-duration', `${duration}s`);
+  });
+});
+
 const tabBtns = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.tech-panel');
 tabBtns.forEach(btn => {
@@ -85,13 +109,76 @@ document.querySelectorAll('.mock-gallery').forEach(gallery => {
 
   function show(i){
     index = (i + slides.length) % slides.length;
-    slides.forEach((s, n) => s.classList.toggle('active', n === index));
+    slides.forEach((s, n) => {
+      s.classList.toggle('active', n === index);
+      s.tabIndex = n === index ? 0 : -1;
+    });
     dots.forEach((d, n) => d.classList.toggle('active', n === index));
   }
 
   gallery.querySelector('.mg-prev')?.addEventListener('click', () => show(index - 1));
   gallery.querySelector('.mg-next')?.addEventListener('click', () => show(index + 1));
   dots.forEach((dot, n) => dot.addEventListener('click', () => show(n)));
+});
+
+/* ============ PROJECT IMAGE LIGHTBOX ============ */
+const imageLightbox = document.getElementById('imageLightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxCaption = document.getElementById('lightboxCaption');
+let lightboxTrigger;
+let lightboxSlides = [];
+let lightboxIndex = 0;
+
+function showLightboxImage(index){
+  lightboxIndex = (index + lightboxSlides.length) % lightboxSlides.length;
+  const image = lightboxSlides[lightboxIndex];
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt;
+  lightboxCaption.textContent = image.alt;
+}
+
+function closeLightbox(){
+  imageLightbox.classList.remove('open');
+  imageLightbox.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('lightbox-open');
+  lightboxTrigger?.focus();
+}
+
+document.querySelectorAll('.mg-slide').forEach(image => {
+  image.tabIndex = image.classList.contains('active') ? 0 : -1;
+  image.setAttribute('role', 'button');
+  image.setAttribute('aria-label', `Ampliar: ${image.alt}`);
+
+  const openLightbox = () => {
+    lightboxTrigger = image;
+    lightboxSlides = Array.from(image.closest('.mock-gallery').querySelectorAll('.mg-slide'));
+    showLightboxImage(lightboxSlides.indexOf(image));
+    imageLightbox.classList.add('open');
+    imageLightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    imageLightbox.querySelector('.lightbox-close').focus();
+  };
+
+  image.addEventListener('click', openLightbox);
+  image.addEventListener('keydown', event => {
+    if(event.key === 'Enter' || event.key === ' '){
+      event.preventDefault();
+      openLightbox();
+    }
+  });
+});
+
+imageLightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+imageLightbox.querySelector('.lightbox-prev').addEventListener('click', () => showLightboxImage(lightboxIndex - 1));
+imageLightbox.querySelector('.lightbox-next').addEventListener('click', () => showLightboxImage(lightboxIndex + 1));
+imageLightbox.addEventListener('click', event => {
+  if(event.target === imageLightbox) closeLightbox();
+});
+document.addEventListener('keydown', event => {
+  if(!imageLightbox.classList.contains('open')) return;
+  if(event.key === 'Escape') closeLightbox();
+  if(event.key === 'ArrowLeft') showLightboxImage(lightboxIndex - 1);
+  if(event.key === 'ArrowRight') showLightboxImage(lightboxIndex + 1);
 });
 
 /* ============ HERO ENTRANCE (orchestrated, on load) ============ */

@@ -252,7 +252,6 @@ function handleIconError(img){
         <h2 class="section-title">Proyectos destacados</h2>
         <p class="section-sub">Proyectos con frontend, backend y base de datos. Cada caso explica el problema, la solución y las decisiones técnicas.</p>
       </div>
-      <div class="projects-count">02</div>
     </div>
 
     <!-- Project 1 -->
@@ -555,6 +554,16 @@ function handleIconError(img){
     </div>
   </div>
 </footer>
+
+<div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightboxCaption">
+  <div class="lightbox-content">
+    <button class="lightbox-close" type="button" aria-label="Cerrar imagen ampliada">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Imagen anterior">‹</button>
+    <img id="lightboxImage" src="" alt="">
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Imagen siguiente">›</button>
+    <p id="lightboxCaption"></p>
+  </div>
+</div>
 
 <script src="js/script.js"></script>
 </body>
